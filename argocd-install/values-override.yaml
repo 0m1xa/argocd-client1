@@ -14,3 +14,5 @@ argo-cd:
         - name: argo-helm
           type: helm
           url: https://argoproj.github.io/argo-helm
+    extraArgs:
+    - --insecure
