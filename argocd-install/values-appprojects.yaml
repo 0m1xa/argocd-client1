@@ -1,0 +1,31 @@
+argo-cd:
+  server:
+    additionalProjects: 
+    - name: argocd
+      namespace: miniargo-client-1
+      additionalLabels: {}
+      additionalAnnotations: {}
+      description: Argocd Project
+      sourceRepos:
+      - '*'
+      destinations:
+      - namespace: miniargo-client-1
+        server: https://kubernetes.default.svc
+      clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+      orphanedResources:
+        warn: false
+    # - name: miniargo-client-1
+    #   namespace: argocd
+    #   description: Argocd Project
+    #   sourceRepos:
+    #   - '*'
+    #   destinations:
+    #   - namespace: miniargo-client-1
+    #     server: https://kubernetes.default.svc
+    #   clusterResourceWhitelist:
+    #   - group: '*'
+    #     kind: '*'
+    #   orphanedResources:
+    #     warn: false

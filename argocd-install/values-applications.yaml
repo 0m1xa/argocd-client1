@@ -1,0 +1,55 @@
+argo-cd:
+  server:
+    additionalApplications: 
+      - name: argocd
+        namespace: miniargo-client-1
+        destination:
+          namespace: miniargo-client-1
+          server: https://kubernetes.default.svc
+        project: argocd
+        source:
+          helm:
+            valueFiles:
+            - ../values-override.yaml
+            - ../values-applications.yaml
+            - ../values-appprojects.yaml
+          path: argocd-install/argo-cd
+          repoURL: https://github.com/0m1xa/argocd-client1.git
+          targetRevision: HEAD
+        syncPolicy:
+          syncOptions:
+          - CreateNamespace=true
+      - name: argocd-apps
+        namespace: miniargo-client-1
+        destination:
+          namespace: miniargo-client-1
+          server: https://kubernetes.default.svc
+        project: argocd
+        source:
+          path: argocd-apps
+          repoURL: https://github.com/0m1xa/argocd-client1.git
+          targetRevision: HEAD
+          directory:
+            recurse: true
+            jsonnet: {}
+        syncPolicy:
+          automated:
+            selfHeal: true
+            prune: true
+      - name: argocd-appprojects
+        namespace: miniargo-client-1
+        destination:
+          namespace: miniargo-client-1
+          server: https://kubernetes.default.svc
+        project: argocd
+        source:
+          path: argocd-appprojects
+          repoURL: https://github.com/0m1xa/argocd-client1.git
+          targetRevision: HEAD
+          directory:
+            recurse: true
+            jsonnet: {}
+        syncPolicy:
+          automated:
+            selfHeal: true
+            prune: true
