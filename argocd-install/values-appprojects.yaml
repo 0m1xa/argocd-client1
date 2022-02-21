@@ -1,7 +1,7 @@
 argo-cd:
   server:
     additionalProjects: 
-    - name: argocd
+    - name: argocd-client-1
       namespace: miniargo-client-1
       additionalLabels: {}
       additionalAnnotations: {}

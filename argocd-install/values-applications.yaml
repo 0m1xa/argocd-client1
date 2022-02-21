@@ -6,7 +6,7 @@ argo-cd:
         destination:
           namespace: miniargo-client-1
           server: https://kubernetes.default.svc
-        project: argocd
+        project: argocd-client-1
         source:
           helm:
             valueFiles:
@@ -24,7 +24,7 @@ argo-cd:
         destination:
           namespace: miniargo-client-1
           server: https://kubernetes.default.svc
-        project: argocd
+        project: argocd-client-1
         source:
           path: argocd-apps
           repoURL: https://github.com/0m1xa/argocd-client1.git
@@ -41,7 +41,7 @@ argo-cd:
         destination:
           namespace: miniargo-client-1
           server: https://kubernetes.default.svc
-        project: argocd
+        project: argocd-client-1
         source:
           path: argocd-appprojects
           repoURL: https://github.com/0m1xa/argocd-client1.git
