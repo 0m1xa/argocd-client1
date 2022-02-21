@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: sample-app
-  namespace: argocd-client1
+  namespace: miniargo-client-1
 spec:
   destination:
     namespace: sample-app-client-1
