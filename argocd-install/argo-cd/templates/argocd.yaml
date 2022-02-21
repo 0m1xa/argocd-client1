@@ -1,0 +1,19 @@
+kind: Application
+metadata:
+  name: argocd
+  namespace: {{ .Release.Namespace }}
+spec:
+  project: argocd
+  source:
+        helm:
+          valueFiles:
+          - ../values-override.yaml
+        path: argocd-install/argo-cd
+        repoURL: https://github.com/0m1xa/argocd-client1.git
+        targetRevision: HEAD
+  destination:
+        namespace: {{ .Release.Namespace }}
+        server: https://kubernetes.default.svc
+  syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
