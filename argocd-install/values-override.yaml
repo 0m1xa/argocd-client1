@@ -6,6 +6,8 @@ argo-cd:
   server:
     ## ArgoCD config
     ## reference https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
+    clusterAdminAccess:
+      enabled: false
     configEnabled: true
     config:
       repositories: |
@@ -20,3 +22,7 @@ argo-cd:
         g, image-updater, role:image-updater
     extraArgs:
     - --insecure
+
+  controller:
+    clusterAdminAccess:
+      enabled: false
