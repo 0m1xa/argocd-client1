@@ -22,7 +22,6 @@ argo-cd:
         g, image-updater, role:image-updater
     extraArgs:
     - --insecure
-
   controller:
     clusterAdminAccess:
       enabled: false
