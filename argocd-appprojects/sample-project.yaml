@@ -8,7 +8,7 @@ spec:
   - group: '*'
     kind: '*'
   destinations:
-  - namespace: sample-app-client-1
+  - namespace: miniargo-client-1
     server: https://kubernetes.default.svc
   orphanedResources:
     warn: false
