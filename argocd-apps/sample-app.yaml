@@ -11,7 +11,7 @@ metadata:
     argocd-image-updater.argoproj.io/write-back-method: git:secret:image-updater-mini-1/git-creds
 spec:
   destination:
-    namespace: sample-app-client-1
+    namespace: miniargo-client-1
     server: https://kubernetes.default.svc
   project: sample-project
   source:
