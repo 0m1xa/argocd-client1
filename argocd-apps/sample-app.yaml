@@ -17,7 +17,7 @@ spec:
   source:
     path: sample-app/
     repoURL: https://github.com/0m1xa/argocd-client1.git
-    targetRevision: HEAD
+    targetRevision: namespace-isolation
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
